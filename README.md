@@ -62,6 +62,17 @@ With [npm](https://npmjs.org/) installed, run
 $ npm install geojson-linestring-dissolve
 ```
 
+## Caveats
+
+There are some cases that this module does not *yet* handle:
+
+1. `LineString`s that fork or junction are returned as two separate
+   `LineString`s -- one fork is chosen at random.
+2. Forks or junctions are only detected if they occur at the `LineString`'s head
+   or tail coordinate.
+
+See a use case that you know how to fill in? PRs welcome!
+
 ## License
 
 ISC
