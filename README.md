@@ -1,11 +1,11 @@
-# geojson-dissolve
+# geojson-linestring-dissolve
 
-> Dissolve contiguous GeoJSON LineStrings and Polygons into single units.
+> Dissolve connected GeoJSON LineStrings into a single LineString.
 
 ## Usage
 
 ```js
-var dissolve = require('geojson-dissolve')
+var dissolve = require('geojson-linestring-dissolve')
 
 var line1 = {
   type: 'LineString',
@@ -24,18 +24,10 @@ var line2 = {
   ]
 }
 
-var geometry = {
-  type: 'GeometryCollection'
-  geometries: [
-    line1,
-    line2
-  ]
-}
-
-console.log(dissolve(geometry))
+console.log(dissolve([line1, line2]))
 ```
 
-This will output
+outputs
 
 ```
 {
@@ -52,21 +44,22 @@ This will output
 ## API
 
 ```js
-var dissolve = require('geojson-dissolve')
+var dissolve = require('geojson-linestring-dissolve')
 ```
 
-### dissolve([geojson])
+### dissolve([lineStrings])
 
-Consumes [GeoJSON](http://geojson.org/geojson-spec.html), and returns a new
-GeoJSON object, with all touching `LineString`s and `Polygon`s merged into
-single units.
+Consumes an array of [GeoJSON](http://geojson.org/geojson-spec.html)
+`LineString`s, and returns a new GeoJSON `LineString` object, with all touching
+`LineString`s dissolved into a single unit. If the `LineString`s are
+non-contiguous, a `MultiLineString` is returned.
 
 ## Install
 
 With [npm](https://npmjs.org/) installed, run
 
 ```
-$ npm install geojson-dissolve
+$ npm install geojson-linestring-dissolve
 ```
 
 ## License

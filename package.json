@@ -1,13 +1,13 @@
 {
-  "name": "geojson-dissolve",
+  "name": "geojson-linestring-dissolve",
   "description": "Dissolve contiguous GeoJSON LineStrings and Polygons into single units.",
   "author": "Stephen Whitmore <sww@eight.net>",
   "version": "0.0.0",
   "repository": {
-    "url": "git://github.com/noffle/geojson-dissolve.git"
+    "url": "git://github.com/noffle/geojson-linestring-dissolve.git"
   },
-  "homepage": "https://github.com/noffle/geojson-dissolve",
-  "bugs": "https://github.com/noffle/geojson-dissolve/issues",
+  "homepage": "https://github.com/noffle/geojson-linestring-dissolve",
+  "bugs": "https://github.com/noffle/geojson-linestring-dissolve/issues",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js",
